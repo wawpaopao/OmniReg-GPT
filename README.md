@@ -30,12 +30,23 @@ pip install accelerate einops scikit-learn transformers==4.33.0
 ```
 
 ## Training and Inference
-To finetune or inference the OmniReg-GPT model or change some layers, you can refer to the example model code provided in the `finetune` folder.  You can specify hyperparameters such as batch_size, learning_rate and lr_schedule via `run.sh`. You can run `generation.py` to generate functional elements by prompt.
+Before starting the training or inference, you need to download the `gena-lm` tokenizer from Hugging Face and set the tokenizer path in the training script.
+```
+huggingface-cli download AIRI-Institute/gena-lm-bert-large-t2t --directory-prefix ./gena-lm-bert-large-t2t
+```
+Then you need to download the pretrained model weights from 
+To finetune or inference the OmniReg-GPT model or change some layers, you can refer to the example model code provided in the `finetune` folder.  We provide an example script of finetuning scATAC data. You can specify hyperparameters such as batch_size, learning_rate and lr_schedule via `run.sh`. You can run `generation.py` to generate functional elements by prompt.
 
 If you're facing GPU memory limitations, you can finetune only a part of the pretrained model by adding two lines in the model class.
 ```
 for param in self.base_model.parameters():
-            param.requires_grad = False
+  param.requires_grad = False
 ```
 
+## Acknowledgements
+We would like to express our gratitude to the open-source projects, which were instrumental in the development of this project:
 
+-[simple-hierarchical-transformer](https://github.com/lucidrains/simple-hierarchical-transformer)  
+-[flash-attention](https://github.com/Dao-AILab/flash-attention)  
+-[transformers](https://github.com/huggingface/transformers)  
+-[gena-lm](https://github.com/AIRI-Institute/GENA_LM)
