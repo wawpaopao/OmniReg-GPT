@@ -28,3 +28,5 @@ source activate omnireg
 # other packages
 pip install accelerate einops scikit-learn transformers==4.33.0
 ```
+
+## Training and Inferance
