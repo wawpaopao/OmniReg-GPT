@@ -29,4 +29,13 @@ source activate omnireg
 pip install accelerate einops scikit-learn transformers==4.33.0
 ```
 
-## Training and Inferance
+## Training and Inference
+To finetune or inference the OmniReg-GPT model or change some layers, you can refer to the example model code provided in the `finetune` folder.  You can specify hyperparameters such as batch_size, learning_rate and lr_schedule via `run.sh`. You can run `generation.py` to generate functional elements by prompt.
+
+If you're facing GPU memory limitations, you can finetune only a part of the pretrained model by adding two lines in the model class.
+```
+for param in self.base_model.parameters():
+            param.requires_grad = False
+```
+
+
