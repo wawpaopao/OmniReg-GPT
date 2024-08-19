@@ -8,3 +8,23 @@ We provide model pretrained weight and code for how to fine-tune our model and g
 <p align="center">
   <img height="560" src="OmniReg-GPT.png">
 </p>
+
+## Requirements and setup
+OmniReg-GPT requires Python 3.8+ and Python packages Pytorch (>=2.0).
+
+To experiment applications with OmniReg-GPT, please first run the following command to setup the environment:
+
+```
+# Clone this repository
+git clone https://github.com/wawpaopao/OmniReg-GPT.git
+cd OmniReg-GPT
+
+# create 'OmniReg-GPT' conda environment by running the following:
+conda create --name omnireg python=3.8
+source activate omnireg
+
+#conda install GPU version pytorch
+
+# other packages
+pip install accelerate einops scikit-learn transformers==4.33.0
+```
