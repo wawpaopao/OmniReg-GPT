@@ -32,7 +32,7 @@ pip install accelerate einops scikit-learn transformers==4.33.0
 ## Training and Inference
 Before starting the training or inference, you need to download the `gena-lm` tokenizer from Hugging Face and set the tokenizer path in the training script.
 ```
-huggingface-cli download AIRI-Institute/gena-lm-bert-large-t2t --directory-prefix ./gena-lm-bert-large-t2t
+huggingface-cli download AIRI-Institute/gena-lm-bert-large-t2t --local-dir ./gena-lm-bert-large-t2t
 ```
 Then you need to download the pretrained model weights from https://zenodo.org/records/13341553
 To finetune or inference the OmniReg-GPT model or change some layers, you can refer to the example model code provided in the `finetune` folder.  We provide an example script of finetuning scATAC data. You can specify hyperparameters such as batch_size, learning_rate and lr_schedule via `run.sh`. You can run `generation.py` to generate functional elements by prompt.
