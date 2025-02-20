@@ -4,6 +4,8 @@ dependencies:
   - pip
   - pip:
     - numpy==1.24.3
+    - pandas==2.0.3
+    - h5py==3.11.0
     - torch==2.0.1
     - einops==0.6.1
     - accelerate==0.22.0
