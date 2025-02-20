@@ -124,7 +124,7 @@ class TotalNvwaDataset(Dataset):
         
         truncated_texts = []
         for text in texts:
-            truncated_text = text[2000:18000]
+            truncated_text = text[3500:16500]
             truncated_texts.append(truncated_text)
 
         output = tokenizer(
